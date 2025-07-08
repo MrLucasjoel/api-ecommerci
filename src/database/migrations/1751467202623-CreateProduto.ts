@@ -17,7 +17,8 @@ export class CreateProduto1751467202623 implements MigrationInterface {
                     {
                         name: 'nome',
                         type: 'varchar',
-                        length: '100'
+                        length: 
+                        '100'
                     },
                     {
                         name: 'preco',
