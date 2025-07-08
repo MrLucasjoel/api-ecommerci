@@ -1,0 +1,13 @@
+Os middlewares do Express.js são funções executadas na sequência do 
+ciclo de requisição e resposta (request → middleware(s) → response). 
+Eles permitem manipular a requisição, resposta, 
+executar lógica de autenticação, validação, log etc.
+
+exercicio para casa 
+- criar um crud para usuario
+    - listar usuario
+    - adicionar
+    - editar
+    - deletar
+
+campos da tabela: id, nome, email, password, token

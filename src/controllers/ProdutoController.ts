@@ -12,6 +12,7 @@ export const ProdutoController = {
             res.status(500).json({erro: "Erro ao listar recursos"})
         }
     },
+   
 
     criar: async(req: Request, res: Response): Promise<void> => {
         try { 
@@ -22,15 +23,27 @@ export const ProdutoController = {
         }
     },
 
-    async buscar(req: Request, res: Response){
-        res.status(200).json({status: "sucesso"})
+    async buscar(req: Request, res: Response): Promise<void>{
+        const id = Number(req.params.id)
+        const produto = await ProdutoService.buscarPorid(id)
+        if(!produto) res.status(404).json({erro: "Produto não encontrado"})
+            res.status(200).json(produto)
     },
 
-    async atualizar(req: Request, res: Response){
-        res.status(200).json({status: "sucesso"})
+    async atualizar(req: Request, res: Response): Promise<void>{
+        const id = Number(req.params.id)
+        const atualizado = await ProdutoService.atualizar(id, req.body)
+        if(!atualizado) res.status(404).json({erro: "Produto não encontrado"})
+
+            res.status(200).json(atualizado)
+
     },
 
-    async deletar(req: Request, res: Response){
-        res.status(200).json({status: "sucesso"})
+    async deletar(req: Request, res: Response): Promise<void>{
+        const id = Number(req.params.id)
+        const removido = await ProdutoService.deletar(id)
+        if(!removido) res.status(404).json({erro: "Produto não encontrado"})
+
+            res.status(200).json({status : "Produto removido com sucesso", produto: removido})
     },
 }
