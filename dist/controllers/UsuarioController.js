@@ -5,8 +5,8 @@ const UsuarioService_1 = require("../services/UsuarioService");
 exports.UsuarioController = {
     async listar(req, res) {
         try {
-            const usuarios = await UsuarioService_1.UsuarioService.listar();
-            res.json(usuarios);
+            const Usuarios = await UsuarioService_1.UsuarioService.listar();
+            res.json(Usuarios);
         }
         catch (error) {
             res.status(500).json({ erro: "Erro ao listar recursos" });
