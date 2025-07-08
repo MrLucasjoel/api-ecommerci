@@ -7,6 +7,7 @@ export const ProdutoController = {
         try {
             // pega os dados, converte p json e retorna mensagem de erro caso ocorra
             const Produtos = await ProdutoService.listar();
+            res.json(Produtos)
         } catch (error) {
             res.status(500).json({erro: "Erro ao listar recursos"})
         }
@@ -15,6 +16,7 @@ export const ProdutoController = {
     criar: async(req: Request, res: Response): Promise<void> => {
         try { 
             const produto = await ProdutoService.criar(req.body);
+            res.status(201).json(produto)
         } catch (error) {
             res.status(500).json({erro: "Erro ao criar recurso"})
         }

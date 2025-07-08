@@ -9,5 +9,8 @@ exports.ProdutoService = {
         const produto = repo.create(data);
         await repo.save(produto);
         return produto;
+    },
+    async listar() {
+        return await repo.find();
     }
 };
