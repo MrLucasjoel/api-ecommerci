@@ -6,8 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppDataSource = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const typeorm_1 = require("typeorm");
-const Produto_1 = require("../entities/Produto");
-const Usuario_1 = require("../entities/Usuario");
+const Produto_1 = require("../../src/entities/Produto");
 dotenv_1.default.config();
 exports.AppDataSource = new typeorm_1.DataSource({
     type: 'mysql',
@@ -16,7 +15,7 @@ exports.AppDataSource = new typeorm_1.DataSource({
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    entities: [Produto_1.Produto, Usuario_1.Usuario],
+    entities: [Produto_1.Produto],
     migrations: ["dist/database/migrations/*.js"],
     synchronize: Boolean(process.env.DB_SYNC)
 });

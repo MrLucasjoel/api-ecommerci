@@ -12,5 +12,22 @@ exports.ProdutoService = {
     },
     async listar() {
         return await repo.find();
+    },
+    async buscarPorid(id) {
+        return await repo.findOneBy({ id });
+    },
+    async atualizar(id, data) {
+        const produto = await repo.findOneBy({ id });
+        if (!produto)
+            return null;
+        repo.merge(produto, data);
+        return await repo.save(produto);
+    },
+    async deletar(id) {
+        const produto = await repo.findOneBy({ id });
+        if (!produto)
+            return null;
+        await repo.remove(produto);
+        return produto;
     }
 };

@@ -9,10 +9,10 @@ export class Produto{
     nome!: String
 
     @Column("decimal", {precision: 10, scale: 2})
-    preco!:number
+    preco!: number
 
     @Column()
-    descricao!:String
+    descricao!: String
 
     @Column()
     ncm!: String
