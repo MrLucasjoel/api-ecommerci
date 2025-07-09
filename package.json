@@ -6,14 +6,16 @@
     "migration:down": "typeorm migration:revert -d ./dist/database/data-source.js"
   },
   "dependencies": {
-    "@types/express": "^5.0.3",
     "dotenv": "^17.0.1",
     "express": "^5.1.0",
     "mysql2": "^3.14.1",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.25"
+    "typeorm": "^0.3.25",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.11",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.8.3"
   }
