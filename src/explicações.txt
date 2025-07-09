@@ -11,3 +11,5 @@ exercicio para casa
     - deletar
 
 campos da tabela: id, nome, email, password, token
+
+npm install bcrypt

@@ -1,16 +1,12 @@
 import { Router } from "express";
-import {
-  listarUsuarios,
-  adicionarUsuario,
-  editarUsuario,
-  deletarUsuario
-} from "../controllers/usuario.controller";
+import { UsuarioController } from "../controllers/usuarioController";
+import { Usuario } from "../entities/Usuario";
 
-const router = Router();
+const routes = Router()
+routes.get("/", UsuarioController.getAll)
+routes.get("/:id", UsuarioController.getOne)
+routes.post("/", UsuarioController.create)
+routes.put("/:id", UsuarioController.update)
+routes.delete("/:id", UsuarioController.delete)
 
-router.get("/", listarUsuarios);
-router.post("/", adicionarUsuario);
-router.put("/:id", editarUsuario); 
-router.delete("/:id", deletarUsuario);
-
-export default router;
+export default routes
