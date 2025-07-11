@@ -12,4 +12,16 @@ exercicio para casa
 
 campos da tabela: id, nome, email, password, token
 
+CORS - NAVEGADOR
+CORS (Cross-Origin Resources Sharing) é um macanismo de segurança dos navegadores que impede requisições
+entre origens diferentes, a menos que o servidor permita explicitamente
+
+frontend: http://locahost:4000
+backend api: http://locahost:3000
+
+sem configurar o CORS o navegador vai bloquear essas requisições
+
+instalação
+npm install cors 
+
 npm install bcrypt

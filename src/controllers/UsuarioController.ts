@@ -8,7 +8,7 @@ export const UsuarioController = {
 
     async getAll(req: Request, res: Response) : Promise<void>{
         try{
-            const user = await UsuarioService.getAll
+            const user = await UsuarioService.getAll()
             res.status(200).json(user)
         }catch{
             res.status(500).json({error: "Recurso não encontrado"})
@@ -37,7 +37,7 @@ export const UsuarioController = {
     async update(req: Request, res: Response) : Promise<void>{
         try{
             const updateData = await UsuarioService.update(Number(req.params.id), req.body)
-
+            console.log(updateData)
             if(!updateData)
                 res.status(404).json({error: notFound})
 
