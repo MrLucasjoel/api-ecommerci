@@ -20,7 +20,7 @@ let Usuario = class Usuario {
 exports.Usuario = Usuario;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", String)
+    __metadata("design:type", Number)
 ], Usuario.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),

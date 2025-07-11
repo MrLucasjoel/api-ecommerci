@@ -14,17 +14,17 @@ export const UsuarioService = {
         return await repo.find();
     },
 
-     async buscarPorid(id: string): Promise<Usuario | null>{
+     async buscarPorid(id: number): Promise<Usuario | null>{
         return await repo.findOneBy({ id })
     },
-    async atualizar(id: string, data: Partial<Usuario>): Promise<Usuario | null> {
+    async atualizar(id: number, data: Partial<Usuario>): Promise<Usuario | null> {
         const usuario = await repo.findOneBy({ id })
         if(!usuario) return null
 
         repo.merge(usuario, data)
         return await repo.save(usuario)
     },
-    async deletar(id: string): Promise<Usuario | null>{
+    async deletar(id: number): Promise<Usuario | null>{
         const usuario = await repo.findOneBy({ id })
         if(!usuario) return null
 

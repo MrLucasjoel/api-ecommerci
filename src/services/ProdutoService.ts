@@ -5,6 +5,7 @@ const repo = AppDataSource.getRepository(Produto);
 
 export const ProdutoService = {
     async criar(data: Partial<Produto>): Promise<Produto> {
+        console.log(data)
         const produto = repo.create(data);
         await repo.save(produto);
         return produto

@@ -6,6 +6,7 @@ const Produto_1 = require("../entities/Produto");
 const repo = data_source_1.AppDataSource.getRepository(Produto_1.Produto);
 exports.ProdutoService = {
     async criar(data) {
+        console.log(data);
         const produto = repo.create(data);
         await repo.save(produto);
         return produto;

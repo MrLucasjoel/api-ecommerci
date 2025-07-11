@@ -13,14 +13,16 @@ export const ProdutoController = {
         }
     },
    
-
     criar: async(req: Request, res: Response): Promise<void> => {
+         console.log(req.body)
         try { 
             const produto = await ProdutoService.criar(req.body);
             res.status(201).json(produto)
+            
         } catch (error) {
-            res.status(500).json({erro: "Erro ao criar recurso"})
+            res.status(500).json({erro: error})
         }
+  
     },
 
     async buscar(req: Request, res: Response): Promise<void>{

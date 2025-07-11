@@ -9,34 +9,34 @@ exports.UsuarioController = {
             res.json(Usuarios);
         }
         catch (error) {
-            res.status(500).json({ erro: "Erro ao listar recursos" });
+            res.status(500).json({ erro: error });
         }
     },
     async buscar(req, res) {
-        const id = String(req.params.id);
+        const id = Number(req.params.id);
         const usuario = await UsuarioService_1.UsuarioService.buscarPorid(id);
         if (!usuario)
-            res.status(404).json({ erro: "Produto não encontrado" });
+            res.status(404).json({ erro: "Usuário não encontrado" });
         res.status(200).json(usuario);
     },
-    adicionar: async (req, res) => {
+    async adicionar(req, res) {
         try {
             const usuario = await UsuarioService_1.UsuarioService.adicionar(req.body);
             res.status(201).json(usuario);
         }
         catch (error) {
-            res.status(500).json({ erro: "Erro ao criar usuário" });
+            res.status(500).json({ erro: error });
         }
     },
     async atualizar(req, res) {
-        const id = String(req.params.id);
+        const id = Number(req.params.id);
         const atualizado = await UsuarioService_1.UsuarioService.atualizar(id, req.body);
         if (!atualizado)
             res.status(404).json({ erro: "Usuario não encontrado" });
         res.status(200).json(atualizado);
     },
     async deletar(req, res) {
-        const id = String(req.params.id);
+        const id = Number(req.params.id);
         const removido = await UsuarioService_1.UsuarioService.deletar(id);
         if (!removido)
             res.status(404).json({ erro: "Usuario não encontrado" });

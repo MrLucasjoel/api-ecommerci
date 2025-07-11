@@ -14,12 +14,13 @@ exports.ProdutoController = {
         }
     },
     criar: async (req, res) => {
+        console.log(req.body);
         try {
             const produto = await ProdutoService_1.ProdutoService.criar(req.body);
             res.status(201).json(produto);
         }
         catch (error) {
-            res.status(500).json({ erro: "Erro ao criar recurso" });
+            res.status(500).json({ erro: error });
         }
     },
     async buscar(req, res) {
