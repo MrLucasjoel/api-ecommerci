@@ -10,5 +10,5 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
   },
-  "include": ["src"],
+  "include": ["src", "src/routes/usuario.routes.ts", "src/database/usuario.ts", "src/controllers/usuario.controller.ts", "src/models"],
 }
