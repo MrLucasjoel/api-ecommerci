@@ -25,7 +25,7 @@ export const AuthService = {
                     email: user.email,
                     nome: user.nome
                 },
-                process.env.jwt_SECRET,
+                process.env.JWT_SECRET,
                 { expiresIn: Number(process.env.JWT_EXPIRE) || '1h'}
             )
 
