@@ -1,6 +1,6 @@
 import { AppDataSource } from "../database/data-source";
 import { Usuario } from "../entities/Usuario";
-const bcrypt = require('Bcrypt')
+const bcrypt = require('bcrypt')
 const saltRounds = 10
 
 const repo = AppDataSource.getRepository(Usuario)
