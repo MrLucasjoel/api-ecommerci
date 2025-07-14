@@ -12,7 +12,7 @@ export const AuthController = {
                 res.status(401).json({erro: "Dados de login incoretos"})
             res.json(auth)
         }catch(error: any){
-            res.status(401).json({erro: error.message})
+            res.status(401).json({erro: error.message, descrico: error})
             console.log(error);
         }
     }
