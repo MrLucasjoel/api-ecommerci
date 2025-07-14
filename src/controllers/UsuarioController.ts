@@ -10,8 +10,8 @@ export const UsuarioController = {
         try{
             const user = await UsuarioService.getAll()
             res.status(200).json(user)
-        }catch(error){
-            res.status(500).json({error: serveError, desc: error})
+        }catch{
+            res.status(500).json({error: "Recurso não encontrado"})
         }
     },
 
@@ -29,8 +29,8 @@ export const UsuarioController = {
         try{
             const user = await UsuarioService.create(req.body)
             res.status(201).json(user)
-        }catch{
-            res.status(500).json({error: serveError})
+        }catch(error){
+            res.status(500).json({error: serveError, desc: error})
         }
     },
 
